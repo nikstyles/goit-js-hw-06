@@ -19,4 +19,4 @@ const element = images.map((image) => {
   return `<li><img src="${image.url}" alt="${image.alt}" height=250></li>`;
 });
 
-galleryContainerEl.insertAdjacentHTML("beforeend", element);
+galleryContainerEl.insertAdjacentHTML("beforeend", element.join(""));

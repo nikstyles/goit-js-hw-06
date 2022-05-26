@@ -7,7 +7,7 @@ const ingredients = [
   "Condiments",
 ];
 
-ingredients.forEach(function (item, index) {
+ingredients.forEach(function (item) {
   const liItemEl = document.createElement("li");
   liItemEl.classList.add("item");
   liItemEl.textContent = item;
