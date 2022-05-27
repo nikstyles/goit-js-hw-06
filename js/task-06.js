@@ -13,10 +13,10 @@ const inputEl = document.querySelector("#validation-input");
 const lengthEl = Number(inputEl.dataset.length);
 
 inputEl.addEventListener("blur", (even) => {
-  if (even.target.value.length === lengthEl) {
+  if (even.target.value.trim().length === lengthEl) {
     inputEl.classList.add("valid");
     inputEl.classList.remove("invalid");
-  } else if (even.target.value.length !== 0) {
+  } else if (even.target.value.trim().length !== 0) {
     inputEl.classList.add("invalid");
   } else {
     inputEl.classList.remove("invalid") || inputEl.classList.remove("valid");
