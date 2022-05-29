@@ -7,12 +7,15 @@ const ingredients = [
   "Condiments",
 ];
 
+const liEl = document.querySelector("#ingredients");
+
+const elements = [];
+
 ingredients.forEach(function (item) {
   const liItemEl = document.createElement("li");
   liItemEl.classList.add("item");
   liItemEl.textContent = item;
-
-  const liEl = document.querySelector("#ingredients");
-
-  liEl.appendChild(liItemEl);
+  elements.push(liItemEl);
 });
+
+liEl.append(...elements);

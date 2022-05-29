@@ -12,13 +12,31 @@
 const inputEl = document.querySelector("#validation-input");
 const lengthEl = Number(inputEl.dataset.length);
 
-inputEl.addEventListener("blur", (even) => {
+// inputEl.addEventListener("blur", (even) => {
+//   if (even.target.value.trim().length === lengthEl) {
+//     inputEl.classList.add("valid");
+//     inputEl.classList.remove("invalid");
+//   } else if (even.target.value.trim().length !== 0) {
+//     inputEl.classList.add("invalid");
+//   } else {
+//     inputEl.classList.remove("invalid") || inputEl.classList.remove("valid");
+//   }
+// });
+
+inputEl.addEventListener("blur", (even, add, remove) => {
   if (even.target.value.trim().length === lengthEl) {
-    inputEl.classList.add("valid");
-    inputEl.classList.remove("invalid");
+    classAdd("valid");
+    classRemove("invalid");
   } else if (even.target.value.trim().length !== 0) {
-    inputEl.classList.add("invalid");
+    classAdd("invalid");
   } else {
-    inputEl.classList.remove("invalid") || inputEl.classList.remove("valid");
+    classRemove("invalid") || classRemove("valid");
   }
 });
+
+function classAdd(classCss) {
+  return inputEl.classList.add(classCss);
+}
+function classRemove(classCss) {
+  return inputEl.classList.remove(classCss);
+}
